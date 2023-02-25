@@ -1,0 +1,18 @@
+﻿@page
+@model RazorPlayground.Pages.DataModel
+@{
+    ViewData["Title"] = "Data Cuk";
+}
+
+<h1>Data @Model.HelloGuys</h1>
+<a asp-page="Create" class="btn btn-primary">Add New Employee</a>
+
+@foreach(var employee in Model.Employee)
+{
+    <div class="row mb-4">
+        <div class="col-2 my-auto">@employee.Id</div>
+        <div class="col-2 my-auto">@employee.Name</div>
+        <div class="col-2 my-auto">@employee.Age</div>
+        <div class="col-2 my-auto"><a asp-page="Delete" asp-route-id="@employee.Id" class="btn btn-danger"></a></div>
+    </div>
+}
